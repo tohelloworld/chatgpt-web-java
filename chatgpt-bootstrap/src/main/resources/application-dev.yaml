@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${MYSQL_USER_NAME:root}
     password: ${MYSQL_PASSWORD:123456}
-    url: ${JDBC_URL:jdbc:mysql://localhost:3309/chat?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true}
+    url: ${JDBC_URL:jdbc:mysql://localhost:3306/chat?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true}
 
 #mybatis-plus:
 #  configuration:
@@ -14,13 +14,13 @@ chat:
   # OpenAI API Key - https://platform.openai.com/account/api-keys
   openai_api_key: ${CHAT_OPENAI_API_KEY:}
   # change this to an `accessToken` extracted from the ChatGPT site's `https://chat.openai.com/api/auth/session` response
-  openai_access_token: ${CHAT_OPENAI_ACCESS_TOKEN:}
+  openai_access_token: ${CHAT_OPENAI_ACCESS_TOKEN:eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1UaEVOVUpHTkVNMVFURTRNMEZCTWpkQ05UZzVNRFUxUlRVd1FVSkRNRU13UmtGRVFrRXpSZyJ9.eyJodHRwczovL2FwaS5vcGVuYWkuY29tL3Byb2ZpbGUiOnsiZW1haWwiOiJ5eTI1OTYxMDY2QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlfSwiaHR0cHM6Ly9hcGkub3BlbmFpLmNvbS9hdXRoIjp7InVzZXJfaWQiOiJ1c2VyLXB3YkdlQ0VTZzlvM05mTG5HQm5DaHNpRiJ9LCJpc3MiOiJodHRwczovL2F1dGgwLm9wZW5haS5jb20vIiwic3ViIjoiYXV0aDB8NjQzNzU4NWZiN2Y4YjM1NzViZGJjYjQ3IiwiYXVkIjpbImh0dHBzOi8vYXBpLm9wZW5haS5jb20vdjEiLCJodHRwczovL29wZW5haS5vcGVuYWkuYXV0aDBhcHAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4Nzg1NDY0MCwiZXhwIjoxNjg5MDY0MjQwLCJhenAiOiJUZEpJY2JlMTZXb1RIdE45NW55eXdoNUU0eU9vNkl0RyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgbW9kZWwucmVhZCBtb2RlbC5yZXF1ZXN0IG9yZ2FuaXphdGlvbi5yZWFkIG9yZ2FuaXphdGlvbi53cml0ZSJ9.EerFfJ99PdDPhIZNtHmXOM_wPLhqhSczBgl1bBRG9i7-EOOZ01DQ50Ugd4BmJ5ytE05JqdevFzJcxpuIRCRCwS97OGwhlPTl1MO2U3uOqHqhkwQoIgiLwfrUdk_5XUO5-5eQBV_oYALChPlrLNU6DTldaF9W_KKy4OcKDPzxDBU76zio1zgxnFPXSn9PMOjf3Gfk2ZoGDw22cmWROiE8Ll7qtVbEdyeI6ZrppgjG2z2yYHA21pdXj9IQ-eWaE5FCYTlOMTZtYFCeyxgwH7gbXbcAjN6I_kollSdXk6k-_SfGXDDQdbBp6MmkpYQIbbgnCvpI2T3p-QCldkcLhoe92A}
   # OpenAI API Base URL - https://api.openai.com/，要加/后缀
   openai_api_base_url: ${CHAT_OPENAI_API_BASE_URL:https://api.openai.com/}
   # API Model - https://platform.openai.com/docs/models apiKey 和 AccessToken mode 不一样
   openai_api_model: ${CHAT_OPENAI_API_MODEL:}
   # 反向代理地址 AccessToken 时使用
-  api_reverse_proxy: ${CHAT_API_REVERSE_PROXY:}
+  api_reverse_proxy: ${CHAT_API_REVERSE_PROXY:http://91.206.92.111:54321/v1/api/completions}
   # 超时毫秒
   timeout_ms: ${CHAT_TIMEOUT_MS:100000}
   # HTTP 代理
@@ -45,15 +45,15 @@ chat:
 # 邮箱验证相关
 email:
   # SMTP 服务器地址
-  host: ${EMAIL_HOST:xxxxxx}
+  host: ${EMAIL_HOST:smtp.qq.com}
   # 端口
   port: ${EMAIL_PORT:465}
   # 发件人前缀
-  from: ${EMAIL_FROM:xxxxxx}
+  from: ${EMAIL_FROM:2596106644@qq.com}
   # 用户名
-  user: ${EMAIL_USER:xxxxxx}
+  user: ${EMAIL_USER:2596106644@qq.com}
   # 如果要授权码，这里就是传授权码
-  pass: ${EMAIL_PASS:}
+  pass: ${EMAIL_PASS:utnwfensnuudecah}
   # 是否需要授权，决定是否要设置授权码
   auth: ${EMAIL_AUTH:true}
   # 邮箱验证码有效期（单位，分钟）
